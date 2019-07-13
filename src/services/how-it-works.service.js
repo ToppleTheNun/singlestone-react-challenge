@@ -11,8 +11,8 @@ async function fetchHowItWorksResponse() {
 }
 
 function compareHowItWorksSteps(stepA, stepB) {
-  const stepANumber = stepA.stepNumber;
-  const stepBNumber = stepB.stepNumber;
+  const stepANumber = parseInt(stepA.stepNumber);
+  const stepBNumber = parseInt(stepB.stepNumber);
 
   let comparison = 0;
   if (stepANumber > stepBNumber) {
@@ -51,13 +51,25 @@ function filterHowItWorksResponse(responseJson) {
     const sortedVersionContent = [...versionContent].sort(
       compareVersionContents
     );
-    // grab the last item in the array because of how it's sorted
+    // grab the last item in the array because it's sorted ascendingly
     const shiftedVersionContent = sortedVersionContent.pop();
     return {
       id,
       stepNumber,
-      title: shiftedVersionContent.title,
-      body: shiftedVersionContent.body
+      versionContent: [shiftedVersionContent]
+    };
+  });
+}
+
+function flattenHowItWorksResponse(responseJson) {
+  return responseJson.map(step => {
+    const { id, stepNumber, versionContent } = step;
+    const { title, body } = versionContent[0];
+    return {
+      id,
+      stepNumber,
+      title,
+      body
     };
   });
 }
@@ -66,7 +78,13 @@ async function fetchSortAndFilterHowItWorksResponse() {
   const responseJson = await fetchHowItWorksResponse();
   const sortedJson = sortHowItWorksResponse(responseJson);
   const filteredJson = filterHowItWorksResponse(sortedJson);
-  return filteredJson;
+  const flattenedJson = flattenHowItWorksResponse(filteredJson);
+  return flattenedJson;
 }
 
 export default fetchSortAndFilterHowItWorksResponse;
+export {
+  sortHowItWorksResponse,
+  filterHowItWorksResponse,
+  flattenHowItWorksResponse
+};
