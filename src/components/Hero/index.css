@@ -1,0 +1,47 @@
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../../assets/photo-couch.jpg");
+  }
+}
+
+@media screen and (min-width: 1921px) and (min-height: 1081px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../../assets/photo-couch_2x.jpg");
+  }
+}
+
+.hero {
+  height: 75%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  align-items: flex-end;
+
+  color: white;
+}
+
+.hero-header {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+.hero-header button {
+  background-color: #47e4c2;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 24px;
+}

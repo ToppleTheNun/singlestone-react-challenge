@@ -1,0 +1,24 @@
+.how-it-works {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  text-align: center;
+}
+
+.how-it-works-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.how-it-works-item {
+  flex: 1 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.how-it-works-item hr {
+  border: none;
+  border-top: 1px solid;
+  margin: 1em 15%;
+}
