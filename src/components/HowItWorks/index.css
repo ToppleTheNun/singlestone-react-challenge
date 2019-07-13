@@ -22,3 +22,7 @@
   border-top: 1px solid;
   margin: 1em 15%;
 }
+
+.how-it-works-item-step-title {
+  text-transform: uppercase;
+}

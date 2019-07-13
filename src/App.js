@@ -10,8 +10,6 @@ export default () => (
   <div className="app">
     <TitleBar />
     <Hero />
-    <main>
-      <HowItWorks />
-    </main>
+    <HowItWorks />
   </div>
 );
