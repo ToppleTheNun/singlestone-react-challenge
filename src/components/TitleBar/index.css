@@ -16,13 +16,13 @@
 }
 
 /* picked a random size larger than a mobile device */
-@media screen and (max-width: 800px) {
+@media all and (max-width: 800px) {
   .titlebar {
     justify-content: center;
   }
 }
 
-@media screen and (min-width: 801px) {
+@media all and (min-width: 801px) {
   .titlebar {
     justify-content: space-between;
   }

@@ -17,7 +17,10 @@
 }
 
 .hero-header {
-  margin: auto 15vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .hero-header h1 {
@@ -46,13 +49,13 @@ button:active {
   background-color: #2ae1e4;
 }
 
-@media screen and (max-width: 1920px) and (max-height: 1080px) {
+@media all and (max-width: 1920px) and (max-height: 1080px) {
   .hero {
     background-image: url("../../assets/photo-couch.jpg");
   }
 }
 
-@media screen and (min-width: 1921px) and (min-height: 1081px) {
+@media all and (min-width: 1921px) and (min-height: 1081px) {
   .hero {
     background-image: url("../../assets/photo-couch_2x.jpg");
   }
