@@ -40,3 +40,15 @@ npm start
 ```bash
 yarn start
 ```
+
+## Test the Project
+
+To test the project, use either NPM or Yarn to run the `start` script included in the package.json.
+
+```bash
+npm run test
+```
+
+```bash
+yarn test
+```

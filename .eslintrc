@@ -12,14 +12,8 @@
     }
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "plugins": [
-    "react"
+    "airbnb",
+    "prettier",
+    "prettier/react"
   ]
 }
