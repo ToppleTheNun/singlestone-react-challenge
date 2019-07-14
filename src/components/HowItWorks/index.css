@@ -33,12 +33,22 @@
 }
 
 .how-it-works-content .step-number {
+  display: inline-block;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
 }
 
+.how-it-works-content .step-number:after {
+  content: "";
+  display: block;
+  border-top: 6px solid #47e4c2;
+  margin-top: 0.5em;
+}
+
 .how-it-works-content .step-title {
   text-transform: uppercase;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 /* picked a random size larger than a mobile device */

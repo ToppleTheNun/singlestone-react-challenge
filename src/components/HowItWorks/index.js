@@ -29,7 +29,6 @@ export default class HowItWorks extends React.Component {
           <h1 className="step-number">
             {this.padStepNumber(step.stepNumber, 2)}
           </h1>
-          <hr />
           <h4 className="step-title">{step.title}</h4>
           <p className="step-body">{step.body}</p>
         </div>
