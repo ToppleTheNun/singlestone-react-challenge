@@ -1,4 +1,4 @@
-async function fetchHowItWorksResponse() {
+const fetchHowItWorksResponse = async () => {
   try {
     const resp = await fetch(
       "https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge"
@@ -8,9 +8,9 @@ async function fetchHowItWorksResponse() {
     console.error(e);
     return [];
   }
-}
+};
 
-function compareHowItWorksSteps(stepA, stepB) {
+const compareHowItWorksSteps = (stepA, stepB) => {
   const stepANumber = parseInt(stepA.stepNumber);
   const stepBNumber = parseInt(stepB.stepNumber);
 
@@ -22,13 +22,13 @@ function compareHowItWorksSteps(stepA, stepB) {
   }
 
   return comparison;
-}
+};
 
-function sortHowItWorksResponse(responseJson) {
+const sortHowItWorksResponse = responseJson => {
   return [...responseJson].sort(compareHowItWorksSteps);
-}
+};
 
-function compareVersionContents(versionContentA, versionContentB) {
+const compareVersionContents = (versionContentA, versionContentB) => {
   const versionAEffectiveDate = versionContentA.effectiveDate;
   const versionBEffectiveDate = versionContentB.effectiveDate;
 
@@ -43,9 +43,9 @@ function compareVersionContents(versionContentA, versionContentB) {
   }
 
   return comparison;
-}
+};
 
-function filterHowItWorksResponse(responseJson) {
+const filterHowItWorksResponse = responseJson => {
   return responseJson.map(step => {
     const { id, stepNumber, versionContent } = step;
     const sortedVersionContent = [...versionContent].sort(
@@ -59,9 +59,9 @@ function filterHowItWorksResponse(responseJson) {
       versionContent: [shiftedVersionContent]
     };
   });
-}
+};
 
-function flattenHowItWorksResponse(responseJson) {
+const flattenHowItWorksResponse = responseJson => {
   return responseJson.map(step => {
     const { id, stepNumber, versionContent } = step;
     const { title, body } = versionContent[0];
@@ -72,17 +72,19 @@ function flattenHowItWorksResponse(responseJson) {
       body
     };
   });
-}
+};
 
-async function fetchSortAndFilterHowItWorksResponse() {
+const fetchSortAndFilterHowItWorksResponse = async () => {
   const responseJson = await fetchHowItWorksResponse();
   const sortedJson = sortHowItWorksResponse(responseJson);
   const filteredJson = filterHowItWorksResponse(sortedJson);
   const flattenedJson = flattenHowItWorksResponse(filteredJson);
   return flattenedJson;
-}
+};
 
 export default fetchSortAndFilterHowItWorksResponse;
+
+// primarily for testing
 export {
   sortHowItWorksResponse,
   filterHowItWorksResponse,
